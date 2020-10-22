@@ -1,0 +1,11 @@
+[Unit]
+Description=stock-engine-service
+After=network-online.target
+
+[Service]
+ExecStart=/bin/bash stock-engine.sh
+WorkingDirectory=/home/rinascente-client/
+User=rinascente-client
+
+[Install]
+WantedBy=multi-user.target
