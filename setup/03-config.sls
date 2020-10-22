@@ -6,7 +6,7 @@ def run():
 
   config['start-stock-engine'] = {
     'service.running' : [
-      {'name': 'stock-egine'},
+      {'name': 'stock-engine'},
       {
         'require': [
           {'file': 'copy-service-file'}
