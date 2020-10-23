@@ -4,7 +4,7 @@ def run():
 
   slspath = __sls__.rsplit(".", 1)[0].replace(".", "/")
   archive_path = 'salt://' + slspath + '/archive/'
-  is_aligner = __salt__['pillar.get']('aligner', 'false')
+  is_aligner = __salt__['pillar.get']('align', 'false')
   config = {}
 
   config['rinascente-client-user'] = {
