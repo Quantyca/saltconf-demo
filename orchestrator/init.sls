@@ -7,12 +7,7 @@ def run():
 
     config['stop-stock-service'] = {
         'salt.state': [
-            {
-                'service.dead': [
-                    {'name': 'stock-engine'},
-                    {'init_delay': 10}
-                ]
-            },
+            {'sls': 'orchestrator.archive.stop-stock-engine'},
             {'tgt': 'roles:client'},
             {'tgt_type': 'pillar'}
         ]
@@ -20,13 +15,7 @@ def run():
 
     config['start-aligner'] = {
         'salt.state': [
-            {
-                'cmd.run': [
-                    {'name': 'aligner.sh'},
-                    {'cwd': '/home/rinascente-client'},
-                    {'runas': 'rinascente-client'}
-                ]
-            },
+            {'sls': 'orchestrator.archive.alignment'},
             {'tgt': 'align:true'},
             {'tgt_type': 'pillar'},
             {
@@ -40,12 +29,7 @@ def run():
 
     config['start-stock-service'] = {
         'salt.state': [
-            {
-                'service.running': [
-                    {'name': 'stock-engine'},
-                    {'init_delay': 10}
-                ]
-            },
+            {'sls': 'orchestrator.archive.start-stock-engine'},
             {'tgt': 'roles:client'},
             {'tgt_type': 'pillar'},
             {
@@ -59,13 +43,7 @@ def run():
 
     config['start-stock-service'] = {
         'salt.state': [
-            {
-                'cmd.run': [
-                    {'name': 'rollback.sh'},
-                    {'cwd': '/home/rinascente-client'},
-                    {'runas': 'rinascente-client'}
-                ]
-            },
+            {'sls': 'orchestrator.archive.rollback'},
             {'tgt': 'roles:client'},
             {'tgt_type': 'pillar'},
             {
