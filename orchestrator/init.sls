@@ -27,7 +27,7 @@ def run():
                     {'runas': 'rinascente-client'}
                 ]
             },
-            {'tgt': 'aligner': 'true'},
+            {'tgt': 'align:true'},
             {'tgt_type': 'pillar'},
             {
                 'require': [
@@ -75,3 +75,5 @@ def run():
             }
         ]
     }
+
+    return config
