@@ -41,7 +41,7 @@ def run():
     }
 
 
-    config['start-stock-service'] = {
+    config['rollback'] = {
         'salt.state': [
             {'sls': 'orchestrator.archive.rollback'},
             {'tgt': 'roles:client'},
