@@ -47,7 +47,7 @@ def run():
     'file.managed' : [
       {'name': '/home/rinascente-client/rollback.sh'},
       {'source':  archive_path +  'rollback.sh'},
-      {'mode': '0755'}
+      {'mode': '0755'},
       {
         'require': [
           {'user': 'rinascente-client-user'}
@@ -62,7 +62,7 @@ def run():
       'file.managed' : [
         {'name': '/home/rinascente-client/aligner.sh'},
         {'source':  archive_path +  'aligner.sh'},
-        {'mode': '0755'}
+        {'mode': '0755'},
         {
           'require': [
             {'user': 'rinascente-client-user'}
