@@ -7,7 +7,7 @@ def run():
 
     config['stop-stock-service'] = {
         'salt.state': [
-            {'sls': 'orchestrator.archive.stop-stock-engine'},
+            {'sls': 'orchestrator.states.stop-stock-engine'},
             {'tgt': 'roles:client'},
             {'tgt_type': 'pillar'}
         ]
@@ -15,7 +15,7 @@ def run():
 
     config['start-aligner'] = {
         'salt.state': [
-            {'sls': 'orchestrator.archive.alignment'},
+            {'sls': 'orchestrator.states.alignment'},
             {'tgt': 'align:true'},
             {'tgt_type': 'pillar'},
             {
@@ -29,7 +29,7 @@ def run():
 
     config['start-stock-service'] = {
         'salt.state': [
-            {'sls': 'orchestrator.archive.start-stock-engine'},
+            {'sls': 'orchestrator.states.start-stock-engine'},
             {'tgt': 'roles:client'},
             {'tgt_type': 'pillar'},
             {
@@ -41,9 +41,10 @@ def run():
     }
 
 
+    """
     config['rollback'] = {
         'salt.state': [
-            {'sls': 'orchestrator.archive.rollback'},
+            {'sls': 'orchestrator.states.rollback'},
             {'tgt': 'roles:client'},
             {'tgt_type': 'pillar'},
             {
@@ -53,5 +54,6 @@ def run():
             }
         ]
     }
+    """
 
     return config
