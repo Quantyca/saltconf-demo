@@ -41,7 +41,7 @@ def run():
     }
 
 
-    """
+    
     config['rollback'] = {
         'salt.state': [
             {'sls': 'orchestrator.states.rollback'},
@@ -54,6 +54,6 @@ def run():
             }
         ]
     }
-    """
+    
 
     return config
